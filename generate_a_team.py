@@ -40,10 +40,10 @@ while(True): #the loop will repeat itself as long as the user wants it to draw m
     all=all.split() #make a list of names
 
 
-    if len(all)<2: #number of names can't be 1
+    if len(all)<2: 
         print("Not enough people to create teams!") 
 
-    elif len(all)%2!=0: #numeber of names have to be even
+    elif len(all)%2!=0: 
         print("Number of names must be even!")
 
     else:
