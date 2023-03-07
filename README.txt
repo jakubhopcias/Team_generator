@@ -1,12 +1,12 @@
 ----------
-TEAM GENERATOR 0.1
+TEAM GENERATOR 0.2
 ----------
 Description: 
 	This program allows you to generate two random teams from a list of names.
 It is written in Python and uses the random library to shuffle the names and divide
 them into two teams. I would like to expand the project: add an API or make it work 
-for odd number of names. This is my first project through which i would like to 
-create something usefull and know Github better
+for odd number of names. This is my first project, which i hope will develop my
+python skills and get to know Github better.
 ----------
 Requirements:
 - Python 3.x
