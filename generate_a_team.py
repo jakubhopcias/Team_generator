@@ -1,7 +1,10 @@
 import random #we need this library to draw a teams
 from termcolor import colored
+import sys
 def createTeams(all):
-
+    if len(all)%2!=0:
+        last=all[len(all)-1]
+        all=all[:len(all)-1]
     number_to_random=len(all)
     drawed_numbers=[]
     while len(drawed_numbers)<number_to_random:
@@ -25,6 +28,16 @@ def createTeams(all):
         team2.append(all[k])
         k+=1
 
+    #if number of names is odd, we will do a coin toss and the winner will have last name added 
+    last_name_random=random.randint(0,1)
+    try:                         
+        if last_name_random==0:
+            team1.append(last)
+        else:
+            team2.append(last)
+    except:
+        pass
+
     team1=' '.join(team1) #make a string of team lists
     team2=' '.join(team2) 
     return [team1,team2] # return a list which contains two teams (in strings)
@@ -34,17 +47,15 @@ while(True): #the loop will repeat itself as long as the user wants it to draw m
 
     if statement>0: print('') #every next time when we have already generated a teams we want to make an endlina after it
 
-    print('Give me the names to create teams (a number of names must be even , example: Jack Johny Jacob Julia): ') 
+    print('Give me the names to create teams (a number of names must be even , example: Jack Johny Jacob Julia) or type "exit" to leave: ') 
     all=input('') #\n will make endline after a text
-
+    if all=='exit':
+        sys.exit()
     all=all.split() #make a list of names
 
 
-    if len(all)<2: 
+    if len(all)<2: #number of names can't be 1
         print("Not enough people to create teams!") 
-
-    elif len(all)%2!=0: 
-        print("Number of names must be even!")
 
     else:
         teams=createTeams(all)
