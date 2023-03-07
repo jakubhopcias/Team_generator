@@ -1,0 +1,3 @@
+0.2 
+    -user can generate random teams even if number of names aren't even
+    -program can be closed at the beggining
